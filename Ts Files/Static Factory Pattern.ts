@@ -22,7 +22,7 @@ class Person {
     public introduceYourSelf() {
         if (this.gender === "Female") {
             let liedAge: number;
-            this.age > 50 ? liedAge = this.age/2 : liedAge = this.age;
+            this.age > 50 ? liedAge = Math.round(this.age/2) : liedAge = this.age;
             console.log(`Hello everyone lovely to meet you.  My name is ${this.name}, I am ${liedAge}.`);
         }
         else {
@@ -33,10 +33,16 @@ class Person {
         console.log(`Hello my name is ${this.name} please introduce yourself.`);
         person.introduceYourSelf();
         console.log(`Nice to meet you ${person.name}.`);
+    }
+    public hasConversationWith(person: Person) {
+        person.talkTo(this);
     }  
 }
 
 const john = PersonFactory.makeMalePerson("John", 36);
-const jane = PersonFactory.makeFemalePerson("Maggie", 76);
+const jane = PersonFactory.makeFemalePerson("Maggie", 77);
 john.talkTo(jane);
 jane.talkTo(john);
+
+const jimmy = PersonFactory.makeMalePerson("Jimmy", 51);
+jimmy.hasConversationWith(jane);
