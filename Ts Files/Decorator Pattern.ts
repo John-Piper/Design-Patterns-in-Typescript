@@ -70,9 +70,11 @@ const getPizzaDescription = (pizza : Pizza) : void => {
 let pizza : Pizza = new CheesePizza();
 
 getPizzaDescription(pizza);
+// Cheese Pizza £2.99
 
 pizza = new ExtraCheese(pizza);
 pizza = new ExtraMushrooms(pizza);
 pizza = new AddedChicken(pizza);
 
 getPizzaDescription(pizza);
+// Cheese Pizza with extra cheese with extra mushrooms with loads of Chicken £5.99
